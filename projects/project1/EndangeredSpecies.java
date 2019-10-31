@@ -1,6 +1,7 @@
 /**
  * The EndangeredSpecies.java program is used to model endangered species names,
  * their current population and their current rate of growth.
+ * Assignment: Implementing Classes Project
  * INPUTS: Species Name, Current Population, Rate of Growth
  * OUTPUT: An endangered Species object
  */
