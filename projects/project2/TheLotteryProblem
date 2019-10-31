@@ -1,0 +1,42 @@
+/**
+ * The TheLotteryProblem.java program is used to simulate a lottery system by randomly generating six numbers.
+ * Array Lists Project
+ * INPUTS: Sets of six numbers
+ * OUTPUT: The sets with random six numbers
+ */
+
+import java.util.Random; //import random
+import java.util.Scanner;   //import scanner
+import java.util.ArrayList;      //import array list
+import java.util.Collections; //import collections
+
+public class TheLotteryProblem {
+	private static Scanner input;
+
+	public static void main(String[] args) {
+		Random rand = new Random();
+		input = new Scanner(System.in);
+		
+		ArrayList<Integer> numList = new ArrayList<>(); //This array list holds the six random numbers
+		
+		System.out.println("Enter number of sets: "); //asks user how many sets of six numbers they want
+		
+		int setCount = input.nextInt(); //user inputs a setCount
+		
+		//loops to get random numbers but not same number in one set
+		for (int j = 0; j < setCount; j++) {
+			for (int i = 0; i < 6; i++) {
+				
+				int number = rand.nextInt(49) + 1;
+					
+					while (numList.contains(number)) {
+						number = rand.nextInt(49) + 1;
+					}
+				numList.add(number);			//adds randomly generated number to the array list
+				Collections.sort(numList);	//sorts the array list before presenting to user			
+			}
+			System.out.println(numList); //prints the randomly generated number list
+			numList.clear(); 		//doesn't add more than six numbers in one set
+		}
+	}
+}
