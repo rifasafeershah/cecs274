@@ -1,0 +1,23 @@
+public class arrays {
+	public static void main(String[] args) {
+		int[] numbers = new int[] {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+		System.out.println("The count is " + count(numbers));
+		System.out.println("Average value of array is " + avg(numbers));
+	}
+	
+	public static int count(int[] numbers) {
+		int count = 0;
+		for (int j = 0; j < numbers.length; j++) {
+			count++;
+		}
+		return count;
+	}
+	public static double avg(int[] numbers) {
+		int sum = 0;
+		for (int i=0; i < numbers.length; i++) {
+			sum = sum + numbers[i];
+		}
+		double average = sum / numbers.length;
+		return average;
+	}
+}
